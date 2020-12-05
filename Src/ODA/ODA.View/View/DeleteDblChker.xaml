@@ -1,0 +1,43 @@
+﻿<Window x:Class="ODA.View.View.DeleteDblChker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:ODA.View.View" mc:Ignorable="d"
+        Title="DeleteDblChker" Height="800" Width="1900" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="#8cf">
+  <Grid Margin="4" >
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="50*"/>
+      <ColumnDefinition Width="250*"/>
+      <ColumnDefinition Width="300*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TextBlock x:Name="tl2" Grid.Row="0" Grid.Column="0" Foreground="#070" />
+    <TextBlock x:Name="tl1" Grid.Row="1" Grid.Column="0" Foreground="#f00" />
+
+    <TextBlock x:Name="th2" Grid.Row="0" Grid.Column="1" Foreground="#070" />
+    <TextBlock x:Name="th1" Grid.Row="1" Grid.Column="1" Foreground="#f00" />
+
+    <TextBlock x:Name="tb2" Grid.Row="0" Grid.Column="2" Foreground="#070" Visibility="Collapsed" />
+    <TextBlock x:Name="tb1" Grid.Row="1" Grid.Column="2" Foreground="#f00" />
+
+    <TextBlock x:Name="tB1" Grid.Row="2" Grid.Column="0" Foreground="#f00" Grid.ColumnSpan="2" />
+    <TextBlock x:Name="tB2" Grid.Row="2" Grid.Column="2" Foreground="#070" />
+
+    <MediaElement Grid.Row="3" Grid.Column="0"  x:Name="me1" LoadedBehavior="Manual" Margin="0,4,4,4" HorizontalAlignment="Right" Loaded="me1_Loaded" Grid.ColumnSpan="2"  />
+    <MediaElement Grid.Row="3" Grid.Column="2"  x:Name="me2" LoadedBehavior="Manual" Margin="4,4,0,4" HorizontalAlignment="Left"  Loaded="me2_Loaded"/>
+
+    <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Right" Margin="0,4,4,4" Grid.Column="2" >
+
+      <CheckBox IsChecked="{Binding OkToDelete, Mode=TwoWay, FallbackValue=False}" x:Name="cbYN" />
+      <Button Margin="8"                  Content="_Explore"  Click="onExp" />
+      <Button Margin="4"                  Content="_Stop"     Click="onEnd" />
+      <Button Margin="4" IsDefault="True" Content="_Yes"      Click="onYes" />
+      <Button Margin="4"  IsCancel="True" Content="_No"       Click="onNoo"  />
+    </StackPanel>
+
+  </Grid>
+</Window>

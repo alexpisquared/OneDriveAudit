@@ -1,0 +1,173 @@
+﻿<Window x:Class="ODA.View.View.MainControlPanel" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" 
+        x:Name="wnd" 
+        xmlns:stb="clr-namespace:AAV.Common" 
+        Title="OneDrive Audit - Dupe Eliminator - " Height="700" Width="900" Left="0" Background="#333" >
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo ProgressValue="{Binding MUProgressPerc}" ProgressState="{Binding MUProgressState, FallbackValue=None}" />
+    </Window.TaskbarItemInfo>
+    <Window.InputBindings>
+        <KeyBinding   Command="{Binding Go_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding Go_Cmd.GestureKey}"	Modifiers="{Binding Go_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F1_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F1_Cmd.GestureKey}"	Modifiers="{Binding F1_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F2_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F2_Cmd.GestureKey}"	Modifiers="{Binding F2_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F3_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F3_Cmd.GestureKey}"	Modifiers="{Binding F3_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F4_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F4_Cmd.GestureKey}"	Modifiers="{Binding F4_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F5_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F5_Cmd.GestureKey}"	Modifiers="{Binding F5_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F6_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F6_Cmd.GestureKey}"	Modifiers="{Binding F6_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F7_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F7_Cmd.GestureKey}"	Modifiers="{Binding F7_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F8_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F8_Cmd.GestureKey}"	Modifiers="{Binding F8_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding F9_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding F9_Cmd.GestureKey}"	Modifiers="{Binding F9_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding FA_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding FA_Cmd.GestureKey}"	Modifiers="{Binding FA_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding FB_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding FB_Cmd.GestureKey}"	Modifiers="{Binding FB_Cmd.GestureModifier}" />
+        <KeyBinding   Command="{Binding FC_Cmd}"	CommandParameter="{Binding ElementName=wnd}" Key="{Binding FC_Cmd.GestureKey}"	Modifiers="{Binding FC_Cmd.GestureModifier}" />
+        <!--<KeyBinding   Command="{Binding CloseAppCmd}"			CommandParameter="{Binding ElementName=wnd}" Key="{Binding CloseAppCmd.GestureKey}"		Modifiers="{Binding CloseAppCmd.GestureModifier}" />-->
+    </Window.InputBindings>
+    <Window.Resources>
+
+        <Style TargetType="{x:Type stb:HighlightableTextBlock}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type stb:HighlightableTextBlock}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <TextBlock x:Name="PART_TEXT"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="CheckBox" >
+            <Setter Property="Margin" Value="0" />
+        </Style>
+
+        <Style TargetType="TextBox" >
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Foreground" Value="#08d" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <Style TargetType="TextBlock" >
+            <Setter Property="Margin" Value="3 0" />
+            <Setter Property="Foreground" Value="#4cf" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <Style TargetType="Label" >
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Foreground" Value="#6b9cc9" />
+        </Style>
+
+
+    </Window.Resources>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu x:Name="MainMenu" HorizontalAlignment="Left" Grid.ColumnSpan="5" Background="Transparent" Foreground="#fff" Grid.Column="2" >
+            <!--<CheckBox IsChecked="{Binding CanStopCntDn}" Content="Stop CDn"  ToolTip="" VerticalAlignment="Top" Margin="0"/>-->
+
+            <MenuItem Header="_F##"  Foreground="#888" >
+                <MenuItem Command="{Binding F1_Cmd}" Foreground="#0e0" Header="F1 - Hash All to DB"	      />
+                <MenuItem Command="{Binding FB_Cmd}" Foreground="#880" Header="F11 - Del CamRoll by Name and Size   "		/>
+                <MenuItem Command="{Binding FC_Cmd}" Foreground="#f00" Header="F12 - Del CamRoll by Name only       "		/>
+                <Separator                                                                                            />
+                <MenuItem Command="{Binding F2_Cmd}" Foreground="#aaa" Header="F2 - ."                                />
+                <MenuItem Command="{Binding F3_Cmd}" Foreground="#aaa" Header="F3 - DELETE(!) found dupes"	          />
+                <MenuItem Command="{Binding F9_Cmd}" Foreground="#aaa" Header="F9 - F1+F2+F3 "								        />
+                <MenuItem Command="{Binding F4_Cmd}" Foreground="#aaa" Header="F4   _"		   Visibility="Collapsed"   />
+                <MenuItem Command="{Binding F5_Cmd}" Foreground="#aaa" Header="Fu   llAudit" Visibility="Collapsed"   />
+                <MenuItem Command="{Binding F7_Cmd}" Foreground="#aaa" Header="F7 - DB ◄== FS Update DB with deletes from file system."	    />
+                <MenuItem Command="{Binding F8_Cmd}" Foreground="#aaa" Header="F8   _"		    Visibility="Collapsed"  />
+                <MenuItem Command="{Binding FA_Cmd}" Foreground="#aaa" Header="FA   _"		    Visibility="Collapsed"  />
+            </MenuItem>
+            <MenuItem Command="{Binding F1_Cmd}" Foreground="#0c0" Header="F1 - Hash All to DB"	      />
+            <MenuItem Command="{Binding FB_Cmd}" Foreground="#c60" Header="F11 - Del CamRoll by Name and Size   "		/>
+            <MenuItem Command="{Binding FC_Cmd}" Foreground="#e40" Header="F12 - Del CamRoll by Name ONLY!!!    "		/>
+            <Separator                                                                                            />
+            <MenuItem Header="Se_ttings" Foreground="#aaa">
+                <MenuItem Header="Proxy Setting" IsCheckable="True" />
+                <Separator />
+                <MenuItem>
+                    <MenuItem.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label       Grid.Row="0" Content="Domain\Username:" />
+                            <TextBox     Grid.Row="0" Grid.Column="1" Width="120" />
+                            <Label       Grid.Row="1" Content="Password:" />
+                            <PasswordBox Grid.Row="1" Grid.Column="1" Width="120" />
+                        </Grid>
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="2016-02-10 16:39" Foreground="#4af" x:Name="tbBuildTime" />
+        </Menu>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding ErrorMsg, FallbackValue=''}" Margin="4" Foreground="#f00" Grid.ColumnSpan="7" Grid.RowSpan="9" />
+
+        <ProgressBar  Grid.Row="1" Grid.Column="0" Value="{Binding PrgLen,  FallbackValue='5'}" Maximum="{Binding TtlLen, FallbackValue='100'}" Margin="4" Foreground="#fff" BorderThickness="0" Background="#ccc" Grid.ColumnSpan="6" />
+        <TextBlock    Grid.Row="1" Grid.Column="0"  Text="{Binding InfoMsg, FallbackValue='abc123'}" Margin="4" Foreground="#04b" Padding="3"  Grid.ColumnSpan="6" />
+        <Label        Grid.Row="2" Grid.Column="2" Content="FHashed:" />
+        <TextBlock    Grid.Row="2" Grid.Column="3"      Text="{Binding FHashed, FallbackValue='abc123'}" Margin="4" Foreground="#0e0" Grid.ColumnSpan="3" />
+
+        <Label        Grid.Row="3" Grid.Column="2" Content="_Current:" Target="{Binding ElementName=tbb}" />
+        <TextBox      Grid.Row="3" Grid.Column="3" x:Name="tbb" Text="{Binding CurrentFolder, FallbackValue='C:\\users\\some\\1dr\\Pics', UpdateSourceTrigger=PropertyChanged, Delay=333}" IsEnabled="{Binding IsReady}" />
+        <TextBlock    Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" Margin="4" Grid.ColumnSpan="1" ><Hyperlink NavigateUri="{Binding CurrentFolder}" RequestNavigate="Hyperlink_RequestNavigate" ><TextBlock Text="Explore" /></Hyperlink></TextBlock>
+
+        <Label        Grid.Row="4" Grid.Column="2" Content="CamRoll:" />
+        <TextBlock    Grid.Row="4" Grid.Column="3" x:Name="tbc" Text="{Binding CamRollFolder, FallbackValue='C:\\users\\some\\1dr\\Pics', UpdateSourceTrigger=PropertyChanged, Delay=333}" IsEnabled="{Binding IsReady}" />
+        <TextBlock    Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" Margin="4" Grid.ColumnSpan="1" ><Hyperlink NavigateUri="{Binding CamRollFolder}" RequestNavigate="Hyperlink_RequestNavigate" ><TextBlock Text="Explore" /></Hyperlink></TextBlock>
+
+        <ListBox      Grid.Row="5" Grid.Column="3" ItemsSource="{Binding AllDirs}" SelectedValue="{Binding CurrentFolder}" Margin="4" />
+
+        <ScrollViewer Grid.Row="6" Grid.ColumnSpan="6" HorizontalAlignment="Right" VerticalAlignment="Top" >
+            <TextBlock  Text="{Binding SaveRpt, FallbackValue='SaveRpt'}" Margin="4" Foreground="#fc8" TextAlignment="Right" HorizontalAlignment="Right" />
+        </ScrollViewer>
+
+        <!--
+			<TextBlock Grid.Row="3" Grid.Column="4" x:Name="tbl" Text="{Binding MasterSubBaseLen, FallbackValue='25'}"                    VerticalAlignment="Center" />
+			<Label     Grid.Row="4" Grid.Column="2" Content="Sub Base:" Target="{Binding ElementName=tbb}" />
+			<TextBlock Grid.Row="4" Grid.Column="3"              Text="{Binding MasterSubBaseStr, FallbackValue='\\Pics'}" Margin="8 0" />
+
+			<Label     Grid.Row="6" Grid.Column="2" Content="_Dupes:" Target="{Binding ElementName=tbd}" />
+			<TextBox   Grid.Row="6" Grid.Column="3" x:Name="tbd" Text="{Binding DoubleFolder, UpdateSourceTrigger=PropertyChanged, Delay=333}"                       IsEnabled="{Binding IsReady}" />
+			<TextBlock Grid.Row="6" Grid.Column="4" x:Name="tbf" Text="{Binding DoubleSubBaseLen, FallbackValue='25'}"        VerticalAlignment="Center" />
+			<TextBox   Grid.Row="6" Grid.Column="5" x:Name="tbX" Text="{Binding MinFileSize, FallbackValue='999', UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Center" Foreground="#e50" Margin="8" />
+			<Label     Grid.Row="7" Grid.Column="2" Content="Sub Base:" Target="{Binding ElementName=tbb}" />
+			<TextBlock Grid.Row="7" Grid.Column="3"              Text="{Binding DoubleSubBaseStr, FallbackValue='C:\\users\\some\\1dr\\'}" Margin="8 0" />
+
+			<Label     Grid.Row="8" Grid.Column="2" Content="Searc_h" Target="{Binding ElementName=tbs}" />
+      <TextBox   Grid.Row="8" Grid.Column="3" x:Name="tbs" Text="{Binding Srch, UpdateSourceTrigger=PropertyChanged, Delay=333}" HorizontalAlignment="Stretch" IsEnabled="{Binding IsReady}" />
+      
+      <StackPanel Grid.Row="6" Grid.ColumnSpan="4" Orientation="Vertical" Margin="6" HorizontalAlignment="Stretch" >
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" ></StackPanel>
+      </StackPanel>
+    -->
+    </Grid>
+</Window>

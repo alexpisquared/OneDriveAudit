@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\ScSv\Src\AlexPi.Scr\AAV.Sys\AAV.Sys.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\ODA.Db\bin\Release\EntityFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
