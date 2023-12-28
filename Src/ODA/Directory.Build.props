@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <!-- OP: latest seems to target the latest version of the ~compiler, not the latest version of the language. 
+    <LangVersion>latest</LangVersion>-->
+    <LangVersion>11.0</LangVersion>
+  </PropertyGroup>
+</Project>
+<!--
+  C# language versioning
+
+  https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
+  Value	      The compiler accepts: 
+  preview	    all valid language syntax from the latest preview version.
+  latest	    syntax from the latest released version of the compiler (including minor version).
+  latestMajor
+  or default	syntax from the latest released major version of the compiler.
+  12.0	      only syntax that is included in C# 12 or lower.
+  11.0	      only syntax that is included in C# 11 or lower.
+  ...
+-->
