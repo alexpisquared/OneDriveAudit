@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ScSv\Src\AlexPi.Scr\AAV.Sys\AAV.Sys.csproj" />
+    <ProjectReference Include="..\..\..\..\..\C\AAV\AAV.Sys\AAV.Sys.4.8.csproj" />
   </ItemGroup>
 
   <ItemGroup>

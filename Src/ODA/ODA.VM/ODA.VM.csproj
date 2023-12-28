@@ -83,9 +83,9 @@
     <Compile Include="VM\MainVM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ScSv\Src\AlexPi.Scr\AAV.Sys\AAV.Sys.csproj">
-      <Project>{79c6ed75-3198-47b8-ad47-16095e0d9f82}</Project>
-      <Name>AAV.Sys</Name>
+    <ProjectReference Include="..\..\..\..\..\C\AAV\AAV.Sys\AAV.Sys.4.8.csproj">
+      <Project>{60BB75F4-E913-40F9-BE60-D5E408F24751}</Project>
+      <Name>AAV.Sys.4.8</Name>
     </ProjectReference>
     <ProjectReference Include="..\AAV.Db.EF\AAV.Db.EF.csproj">
       <Project>{b24ae419-772b-4e7c-bd86-8f5e6066384b}</Project>

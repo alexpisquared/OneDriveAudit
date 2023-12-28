@@ -157,9 +157,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ScSv\Src\AlexPi.Scr\AAV.Sys\AAV.Sys.csproj">
-      <Project>{79c6ed75-3198-47b8-ad47-16095e0d9f82}</Project>
-      <Name>AAV.Sys</Name>
+    <ProjectReference Include="..\..\..\..\..\C\AAV\AAV.Sys\AAV.Sys.4.8.csproj">
+      <Project>{60bb75f4-e913-40f9-be60-d5e408f24751}</Project>
+      <Name>AAV.Sys.4.8</Name>
     </ProjectReference>
     <ProjectReference Include="..\ODA.Core.Lib\ODA.Core.Lib.csproj">
       <Project>{e3a60315-9e01-42eb-be76-8a379b28d9ef}</Project>
