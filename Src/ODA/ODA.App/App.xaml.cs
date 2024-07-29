@@ -15,7 +15,7 @@ public partial class App : Application
 {
   public Stopwatch SW = Stopwatch.StartNew();
 
-  [Obsolete]
+  // [Obsolete] :why Copilot decides to mark it such?
   protected override void OnStartup(StartupEventArgs e)
   {
     //Bpr.BeepFD(10000, 30);
